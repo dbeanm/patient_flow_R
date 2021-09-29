@@ -68,7 +68,7 @@ edge_weights <- edge_weights[,keep]
 edge.pca <- prcomp(edge_weights, center = T, scale = T)
 plot(edge.pca, type="l")
 
-#save the pca object
+#save the pca object - useful so you can later load it to make a more polished figure
 save(list=c("edge.pca", "edge_weights"), file=paste("edge.pca_",SITE,"_thresh",DAY_THRESH,".RData",sep=""))
 #save the first 4 PC to file
 pc_out_max <- min(dim(edge.pca$x)[2], 4) #output up to 4 pc if there are more than 4
